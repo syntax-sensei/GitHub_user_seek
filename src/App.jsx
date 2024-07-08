@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
+import Themer from "./components/Themer";
+
 
 function App() {
 
@@ -25,10 +27,11 @@ function App() {
 
   return (
     <>
-      
+    
+      <Themer/>
       <SearchBar onSearch={getUserData}/>
       {userData && <UserCard userInfo={userData} />}
-
+    
     </>
   )
 }
