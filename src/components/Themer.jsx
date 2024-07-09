@@ -32,7 +32,7 @@ const Themer = () => {
 
 
   return (
-    <section className='flex justify-center px-10 '>
+    <section className='flex justify-center  '>
     <div className=' flex justify-between w-1/2 mt-20 dark:text-white'>
 
         <span className='font-bold text-2xl'>
