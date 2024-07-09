@@ -27,11 +27,11 @@ function App() {
 
   return (
     <>
-    
+    <div className="h-screen dark:bg-bgcolor">
       <Themer/>
       <SearchBar onSearch={getUserData}/>
       {userData && <UserCard userInfo={userData} />}
-    
+      </div>
     </>
   )
 }
