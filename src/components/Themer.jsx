@@ -32,23 +32,21 @@ const Themer = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-
   return (
-    <section className='flex justify-center  '>
-      <div className=' flex justify-between w-1/2 mt-20 dark:text-white'>
-
-        <span className='font-bold text-2xl'>
+  <section className='flex justify-center'>
+    <div className=' flex justify-between w-1/2 mt-20 dark:text-white'>
+       <span className='font-bold text-2xl'>
           devfinder
-        </span>
-        <div>
-          <button className='relative' onClick={handleThemeSwitch}>
+       </span>
+      <div>
+        <button className='relative' onClick={handleThemeSwitch}>
             {butttext}{symbol}
-          </button>
-        </div>
+        </button>
       </div>
-
-    </section>
-  )
+    </div>
+  </section>
+  
+)
 }
 
 export default Themer

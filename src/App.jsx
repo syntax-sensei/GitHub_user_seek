@@ -1,38 +1,21 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
 import SearchBar from "./components/SearchBar";
-import UserCard from "./components/UserCard";
 import Themer from "./components/Themer";
+import { QueryClientProvider, QueryClient} from '@tanstack/react-query';
 
 
 function App() {
 
-  const [userData, setUserData] = useState(null);
-
-  const getUserData = async (username) => {
-    try {
-      const response = await fetch(`https://api.github.com/users/${username}`);
-      if (!response.ok) {
-        throw new Error("User not found");
-      }
-      const data = await response.json();
-      console.log(data);
-      setUserData(data);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-      setUserData(null);
-    }
-    
-  };
+  const queryClient = new QueryClient();
 
   return (
-    <>
-    <div className="h-screen dark:bg-bgcolor">
-      <Themer/>
-      <SearchBar onSearch={getUserData}/>
-      {userData && <UserCard userInfo={userData} />}
+    <QueryClientProvider client={queryClient}>
+      <div className="h-screen dark:bg-bgcolor">
+        <Themer/>
+        <SearchBar/>
       </div>
-    </>
+    </QueryClientProvider>
   )
 }
 

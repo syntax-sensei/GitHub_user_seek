@@ -21,7 +21,13 @@ function UserCard({ userInfo }) {
                 <div className="text-sm text-[#2458b9] dark:text-[#357cff]">@{userInfo.login}</div>
               </div>
               <div className="text-xs text-zinc-600 mt-1 dark:text-white">
-                Joined {userInfo.created_at}
+    
+              Joined {new Date(userInfo.created_at).toLocaleDateString('en-IN', {
+                  day: '2-digit',
+                  month: 'short',
+                  year: 'numeric'  
+              })}
+
               </div>
             </div>
             <div className="text-zinc-600 mb-6 dark:text-white">{userInfo.bio || 'This profile has no bio'}</div>
