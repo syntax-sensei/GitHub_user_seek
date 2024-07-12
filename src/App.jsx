@@ -4,10 +4,9 @@ import SearchBar from "./components/SearchBar";
 import Themer from "./components/Themer";
 import { QueryClientProvider, QueryClient} from '@tanstack/react-query';
 
+const queryClient = new QueryClient();
 
 function App() {
-
-  const queryClient = new QueryClient();
 
   return (
     <QueryClientProvider client={queryClient}>
